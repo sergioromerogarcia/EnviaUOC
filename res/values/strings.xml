@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EnviaUOC</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="TituloAPP">Envía UOC</string>
+	<string name="hint_Campo_NombreUsuario">Nombre Usuario</string>
+    <string name="hint_Campo_Password">Password</string>
+    <string name="nombre_Campo_CerrarSesion">No cerrar sesión</string>
+    <string name="nombre_Boton_Login">Login</string>
+    <string name="nombre_Texto_1">Número Envío:</string>
+    <string name="nombre_Texto_2">Dirección:</string>
+    <string name="nombre_Texto_3">Nombre Cliente:</string>
+    <string name="nombre_boton_1">Grabar y Nuevo</string>
+    <string name="nombre_boton_2">Consultar</string>
+    <string name="titulo_Pantalla_MisEnvios">Mis Envíos</string>
+     <string name="search_title">Buscar</string>
+</resources>

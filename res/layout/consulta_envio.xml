@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+     
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_marginLeft="120dp">
+
+    </SearchView>
+
+	<TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/nombre_Texto_1"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+	<View
+	    android:layout_width="fill_parent"
+	    android:layout_height="2dp"
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@+id/searchView"
+	    android:background="@android:color/darker_gray" />
+
+</RelativeLayout>

@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${packageName}.${activityClass}" >
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText1"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:hint="@string/hint_Campo_Password"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="27dp"
+        android:ems="10"
+        android:hint="@string/hint_Campo_NombreUsuario"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="45dp"
+        android:text="@string/TituloAPP"
+        android:textColor="#56A5EC"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <RadioButton
+        android:id="@+id/radioButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_below="@+id/editText2"
+        android:layout_marginTop="20dp"
+        android:text="@string/nombre_Campo_CerrarSesion" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_below="@+id/radioButton1"
+        android:layout_marginTop="47dp"
+        android:text="@string/nombre_Boton_Login" />
+
+</RelativeLayout>
