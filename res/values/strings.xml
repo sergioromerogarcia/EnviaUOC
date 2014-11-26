@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">EnviaUOC</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="hello_world">Hola Mundo!</string>
     <string name="TituloAPP">Envía UOC</string>
 	<string name="hint_Campo_NombreUsuario">Nombre Usuario</string>
     <string name="hint_Campo_Password">Password</string>
