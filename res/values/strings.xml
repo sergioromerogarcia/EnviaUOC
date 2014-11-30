@@ -16,4 +16,6 @@
     <string name="nombre_boton_3">Localizar</string>
     <string name="titulo_Pantalla_MisEnvios">Mis Envíos</string>
      <string name="search_title">Buscar</string>
+     <string name="desc_imagen_envio">Descripción del envio</string>
+     <string name = "text_item_defecto">Texto por defecto</string>
 </resources>

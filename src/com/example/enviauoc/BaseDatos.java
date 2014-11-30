@@ -260,7 +260,7 @@ public class BaseDatos extends SQLiteOpenHelper{
 	}
 	
 	/**
-	 * Método que reptorna los envios de los usuarios pasados por parámetro.
+	 * Método que retorna los envios de los usuarios pasados por parámetro.
 	 * @param idUsuario
 	 * @return
 	 */

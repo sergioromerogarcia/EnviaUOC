@@ -2,16 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-     
+
     <SearchView
         android:id="@+id/searchView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
-        android:layout_marginLeft="120dp">
-
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp" >
     </SearchView>
 
-	<TextView
+    <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,11 +20,23 @@
         android:layout_marginTop="16dp"
         android:text="@string/nombre_Texto_1"
         android:textAppearance="?android:attr/textAppearanceSmall" />
-	<View
-	    android:layout_width="fill_parent"
-	    android:layout_height="2dp"
-	    android:layout_alignParentLeft="true"
-	    android:layout_below="@+id/searchView"
-	    android:background="@android:color/darker_gray" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/searchView"
+        android:background="@android:color/darker_gray" />
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/view1"
+        android:layout_marginTop="27dp" >
+
+    </ListView>
 
 </RelativeLayout>
