@@ -153,6 +153,30 @@ public class BaseDatos extends SQLiteOpenHelper{
 	}
 	
 	/**
+	 * Recuperamos valores de un usuario
+	 */
+	
+    public usuario getUsuario(String nom) {
+    	usuario objusuario=null;
+        SQLiteDatabase db = this.getReadableDatabase();
+        //Definimos las columnas a recuperar.
+	    String[] valores_recuperar = {usuario_ID, usuario_nombre, usuario_password, usuario_email};
+	    		
+	    Cursor cursor = db.query(NOMBRE_TABLA_USUARIOS, new String[] { usuario_ID, usuario_nombre, usuario_password,usuario_email  }, usuario_nombre + "=?",
+                new String[] { String.valueOf(nom) }, null, null, null, null);
+        
+	    if (cursor != null) {
+            cursor.moveToFirst();
+	    	 objusuario = new usuario(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3));	
+	    }else {
+			//No Existe el usuario
+	    	
+		}
+        
+        return objusuario;
+    }
+	
+	/**
 	 * Comprobación si hay datos en las tablas.
 	 * @return
 	 */
@@ -168,11 +192,39 @@ public class BaseDatos extends SQLiteOpenHelper{
 	    
 		return ret; 
 	}
+	
+	/**
+	 * Comprobación si existe el usuario en la tabla.
+	 * @return
+	 */
+	public boolean existeUsuario (String nombre) {
+		Boolean ret = false;
 
-	public usuario recuperarTienda(int id) {
+		SQLiteDatabase db = getReadableDatabase();
+		String[] valores_recuperar = {usuario_ID, usuario_nombre, usuario_password, usuario_email};
+		Cursor c = db.query(NOMBRE_TABLA_USUARIOS, valores_recuperar, "nombreUsuario=" + '"'+nombre+'"', null, null, null, null, null);
+		if (c.moveToFirst()) ret=true;
+
+		return ret; 
+	}
+
+	public usuario recuperarUsuarioPorID(int id) {
 	    SQLiteDatabase db = getReadableDatabase();
 	    String[] valores_recuperar = {usuario_ID, usuario_nombre, usuario_password, usuario_email};
 	    Cursor c = db.query(NOMBRE_TABLA_USUARIOS, valores_recuperar, "_id=" + id, null, null, null, null, null);
+	    if(c != null) {
+	        c.moveToFirst();
+	    }
+		usuario objusuario = new usuario(c.getInt(0), c.getString(1), c.getString(2), c.getString(3));
+        db.close();
+        c.close();
+        return objusuario;
+	}
+	
+	public usuario recuperarUsuarioPorNombre(String nombre) {
+	    SQLiteDatabase db = getReadableDatabase();
+	    String[] valores_recuperar = {usuario_ID, usuario_nombre, usuario_password, usuario_email};
+	    Cursor c = db.query(NOMBRE_TABLA_USUARIOS, valores_recuperar, "nombreUsuario=" + '"'+nombre+'"', null, null, null, null, null);
 	    if(c != null) {
 	        c.moveToFirst();
 	    }
@@ -208,12 +260,12 @@ public class BaseDatos extends SQLiteOpenHelper{
 	}
 	
 	/**
-	 * Método que reptorna las ofertas de la tienda pasada por parámetro.
-	 * @param idTienda
+	 * Método que reptorna los envios de los usuarios pasados por parámetro.
+	 * @param idUsuario
 	 * @return
 	 */
 	
-	public List<envio> getOfertasTienda(String idUsuario){
+	public List<envio> getEnviosUsuario(String idUsuario){
 		//Ligamos la tabla de usuarios y de envios medinante el _id
 		String queryEnvios = "SELECT " + NOMBRE_TABLA_ENVIOS+ "." + envio_id+ "," + envio_track+ "," + envio_direccion+ "," + 
 		envio_idUsuario+ " from " + NOMBRE_TABLA_ENVIOS+ "," + NOMBRE_TABLA_USUARIOS+" WHERE " + 

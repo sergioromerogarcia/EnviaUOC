@@ -13,6 +13,7 @@
     <string name="nombre_Texto_3">Nombre Cliente:</string>
     <string name="nombre_boton_1">Grabar y Nuevo</string>
     <string name="nombre_boton_2">Consultar</string>
+    <string name="nombre_boton_3">Localizar</string>
     <string name="titulo_Pantalla_MisEnvios">Mis Envíos</string>
      <string name="search_title">Buscar</string>
 </resources>
