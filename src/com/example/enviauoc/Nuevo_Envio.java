@@ -178,6 +178,8 @@ public class Nuevo_Envio extends Activity implements OnClickListener, android.lo
 			//Abrimos la pantalla de Consulta
 			Intent i = new Intent(Nuevo_Envio.this, Consulta_Envio.class);
 			startActivity(i);
+			//Pasamos el IDUsuario a la actividad para poder consultar los envios del usuario
+			i.putExtra("id", idUsuario+"");
 			break;	
 		case R.id.button3:
 			//Grabar registro nuevo
