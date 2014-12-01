@@ -155,7 +155,6 @@ public class Nuevo_Envio extends Activity implements OnClickListener, android.lo
 		switch(v.getId()){
 		case R.id.button1:
 			//Daremos de Alta el registro en la base de datos y blanquearemos los campos
-			/*
 			bd = new BaseDatos(this, null, null);
 			bd.insertarEnvio(textNumeroEnvio.getText().toString(), textDireccion.getText().toString(), idUsuario);
 			try {
@@ -164,7 +163,6 @@ public class Nuevo_Envio extends Activity implements OnClickListener, android.lo
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			*/
 			int rand = randInt(1111, 9999);
 			textNumeroEnvio.setText(rand+"");
 			//Limpiamos los datos de la pantalla
