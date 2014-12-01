@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,7 +30,7 @@ public class Consulta_Envio extends Activity {
 		//Parsea el valor a int
 		idUsuario = Integer.parseInt(idUsuario_string);
 		
-		//Cargamos los envios en el Array List, nos devuelve un objeto envio en cada posición del ArrayList
+		//Cargamos los envios en el Array List, nos devuelve un objeto envio en cada posici—n del ArrayList
 		ArrayList<envio> datos = (ArrayList<envio>) bd.getEnviosUsuario(idUsuario_string);
 		//Cargamos el objeto List del Layout
 		lista = (ListView) findViewById(R.id.listView1);
@@ -49,13 +50,14 @@ public class Consulta_Envio extends Activity {
 				}
 			}
 		});
-		//Función para capturar el click en el item de la lista
-		lista.setOnClickListener(new OnClickListener() {			
-			@Override
-			public void onClick(View v) {
+		//Funci—n para capturar el click en el item de la lista
+		lista.setOnItemClickListener(new OnItemClickListener() { 
+		    @Override
+		    public void onItemClick(AdapterView<?> pariente, View view, int posicion, long id) {
 				Toast.makeText(getApplicationContext(),"Mostraremos la actividad con los detalles del envio seleccionado ....", Toast.LENGTH_LONG).show();
-			}
-		});
+		    }
+
+		 });
 	}
 
 }

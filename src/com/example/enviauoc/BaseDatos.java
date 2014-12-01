@@ -1,8 +1,6 @@
 /**
- * @author sergioromero
- * Clase Helper para manejar la base de datos y poder llamarla desde nuestra aplicación.
- * En lugar de importarla ya hecha, aprovecharemos esta clase para dar de lata los registros necesarios para la práctica.
- * Crearemos dos tablas relacionadas (1->n) donde cada tienda tendrá asociada 5 ofertas.
+ * @author Sergio Romero Garcia
+ * PRACTICA 2 TDM
  */
 package com.example.enviauoc;
 import java.io.File;
@@ -20,10 +18,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Environment;
-/*
- * Tiendas = Usuarios
- * Ofertas = Envíos
- */
+
 public class BaseDatos extends SQLiteOpenHelper{
 	//*********** Definición de la base de datos ************
 	//Nombre de la base de datos que almacenarán todos los datos
@@ -52,7 +47,8 @@ public class BaseDatos extends SQLiteOpenHelper{
 	static final String envio_id = "_id";
 	static final String envio_track = "trackEnvio";
 	static final String envio_direccion = "direccionEnvio";
-	static final String envio_idUsuario = "_idUsuario"; //Usuario al que pertenece el envio
+	//Usuario al que pertenece el envio
+	static final String envio_idUsuario = "_idUsuario"; 
 	//*******************************************************
 
 	//********** Sentencia SQL para crear la tabla de Usuarios *****
@@ -186,7 +182,7 @@ public class BaseDatos extends SQLiteOpenHelper{
 		SQLiteDatabase db = getReadableDatabase();
 		//Definimos las columnas a recuperar.
 	    String[] valores_recuperar = {usuario_ID, usuario_nombre, usuario_password, usuario_email};
-	    //Definimos un cursor para poder movernos por los registros de la tabla tienda.
+	    //Definimos un cursor para poder movernos por los registros de la tabla usuarios.
 	    Cursor c = db.query(NOMBRE_TABLA_USUARIOS, valores_recuperar, null, null, null, null, null, null);
 	    if (c.moveToFirst()) ret=true;
 	    
@@ -239,7 +235,7 @@ public class BaseDatos extends SQLiteOpenHelper{
 	    List<envio> lista_envios = new ArrayList<envio>();
 	    //Definimos las columnas a recuperar.
 	    String[] valores_recuperar = {envio_id, envio_track, envio_direccion, envio_idUsuario};
-	    //Definimos un cursor para poder movernos por los registros de la tabla tienda.
+	    //Definimos un cursor para poder movernos por los registros de la tabla usuarios.
 	    Cursor c = db.query(NOMBRE_TABLA_ENVIOS, valores_recuperar, null, null, null, null, null, null);
 	    //Movemos el cursor a la primera posición de la tabla.
 	    

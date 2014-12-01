@@ -1,16 +1,13 @@
 package com.example.enviauoc;
 
 import java.util.ArrayList;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-/** Adaptador de ListView universal, para www.jarroba.com
- * @author Ramon Invarato Menéndez
- * www.jarroba.es
+/** Adaptador de ListView universal
  */
 public abstract class Lista_adaptador extends BaseAdapter {
 	
@@ -50,10 +47,6 @@ public abstract class Lista_adaptador extends BaseAdapter {
 		return posicion;
 	}
 	
-	/** Devuelve cada una de las entradas con cada una de las vistas a la que debe de ser asociada
-	 * @param entrada La entrada que será la asociada a la view. La entrada es del tipo del paquete/handler
-	 * @param view View particular que contendrá los datos del paquete/handler
-	 */
 	public abstract void onEntrada (Object entrada, View view);
     
 }

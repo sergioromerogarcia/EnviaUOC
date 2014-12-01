@@ -3,9 +3,6 @@ package com.example.enviauoc;
 import java.io.IOException;
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -47,9 +44,7 @@ public class MainActivity extends Activity {
 
 			/*
 			 * Ya que hemos utilizado SQLiteOpenHelper no es posible guardar directamente la base de datos al almacenamiento externo.Para ello deberiamos 
-			 * utilizar las funciones de SQLiteDatabase e implementar manualmente la creación así como el upgrade.
-			 * Ya que la presente práctica tiene datos estáticos en base de datos he tomado la decisión de realizar una copia de la misma en 
-			 * el momento de la creación.
+			 * utilizar las funciones de SQLiteDatabase e implementar manualmente la creaci—n as’ como el upgrade.
 			 */
 			try {
 				bd.copiarBD(this.getBaseContext());

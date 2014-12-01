@@ -1,5 +1,6 @@
 /**
- * Clase Envio para poder convertir cada fila de la tabla en un objeto y poder acceder fácilmente a los valores del registro
+ * Clase Envio para poder convertir cada fila de la tabla en un objeto y poder acceder fácilmente 
+ * a los valores del registro
  */
 package com.example.enviauoc;
 
