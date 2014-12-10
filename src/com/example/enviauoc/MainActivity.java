@@ -54,6 +54,7 @@ public class MainActivity extends Activity {
 		}
 		// Define el campo de Usuario y lo relaciona con el id del fichero activity.xml
 		textUsuario = (EditText) findViewById(R.id.editText1);
+		textUsuario.requestFocus();
 		// Define el campo del Passw y lo relaciona con el id del fichero activity.xml
 		textPassword = (EditText) findViewById(R.id.editText2);
 		
